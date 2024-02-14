@@ -1,0 +1,99 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: SMA BYD
+
+
+BO_ 992 SMA3E0: 8 SMA
+
+BO_ 1504 SMA_string: 8 SMA
+
+BO_ 1376 SMA_init: 8 SMA
+
+BO_ 1496 BMS_BYD: 8 SMA
+
+BO_ 1056 SMA_TS: 8 SMA
+ SG_ inv_ts : 7|32@0+ (1,0) [0|0] "timestamp" Vector__XXX
+
+BO_ 864 SMA_UI: 8 SMA
+ SG_ inv_i : 23|16@0- (0.1,0) [0|0] "A" Vector__XXX
+ SG_ inv_u : 7|16@0- (0.1,0) [0|0] "V" Vector__XXX
+
+BO_ 344 BMS_err: 8 BYD
+
+BO_ 1304 BMS_T: 8 BYD
+ SG_ bat_tmin : 23|16@0- (0.1,0) [0|0] "°C" Vector__XXX
+ SG_ bat_tmax : 7|16@0- (0.1,0) [0|0] "°C" Vector__XXX
+
+BO_ 1112 BMS458: 8 BYD
+
+BO_ 1560 BMS_strings: 8 BYD
+
+BO_ 1432 BMS_serial: 8 BYD
+ SG_ bat_serial : 23|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ bat_prod_ts : 39|32@0+ (1,0) [0|0] "timestamp" Vector__XXX
+
+BO_ 1368 BMS_init: 8 BYD
+ SG_ bat_cap_max : 47|8@0- (0.1,0) [0|0] "kWh" Vector__XXX
+ SG_ fw_sub : 15|8@0- (1,0) [0|0] "" Vector__XXX
+ SG_ fw_main : 7|8@0- (1,0) [0|0] "" Vector__XXX
+
+BO_ 1240 BMS_UIT: 8 BYD
+ SG_ bat_ready : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ bat_tavg : 39|16@0- (0.1,0) [0|0] "°C" Vector__XXX
+ SG_ bat_i : 23|16@0- (0.1,0) [0|0] "A" Vector__XXX
+ SG_ bat_u : 7|16@0- (0.1,0) [0|0] "V" Vector__XXX
+
+BO_ 984 BMS_SoCHC: 8 BYD
+ SG_ bat_capa : 39|16@0- (0.1,0) [0|0] "Ah" Vector__XXX
+ SG_ bat_soh : 23|16@0- (0.01,0) [0|0] "%" Vector__XXX
+ SG_ bat_soc : 7|16@0- (0.01,0) [0|0] "%" Vector__XXX
+
+BO_ 856 BMS_UI_limits: 8 BYD
+ SG_ bat_charge_current : 55|16@0- (0.1,0) [0|0] "A" Vector__XXX
+ SG_ bat_discharge_current : 39|16@0- (0.1,0) [0|0] "A" Vector__XXX
+ SG_ bat_min_voltage : 23|16@0- (0.1,0) [0|0] "V" Vector__XXX
+ SG_ bat_max_voltage : 7|16@0- (0.1,0) [0|0] "V" Vector__XXX
+
+
+
+CM_ SG_ 1304 bat_tmin "got it wrong in the trace";
+CM_ SG_ 1304 bat_tmax "got it wrong in the trace";
+CM_ SG_ 984 bat_capa "unknown how this works";
+BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "MultiplexExtEnabled" "No";
+BA_DEF_DEF_  "BusType" "CAN";
+
